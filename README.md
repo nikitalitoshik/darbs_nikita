@@ -17,5 +17,8 @@ In case of sqlite
 In case of postgresql
 3. `./vendor/bin/sail up`
 4. configure alias `alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'`
-5. `sail artisan migrate`
+5. `sail artisan migrate --seed`
 6. go to localhost
+
+User: test@example.com
+pass: password

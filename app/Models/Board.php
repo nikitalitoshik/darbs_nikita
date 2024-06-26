@@ -9,8 +9,10 @@ class Board extends Model
 {
     use HasFactory;
 
+    protected $with = ['columns'];
+
     protected $fillable = [
-        'title',
+        'name',
     ];
 
     public function columns(): \Illuminate\Database\Eloquent\Relations\HasMany

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KanbanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,11 +12,13 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', \App\Livewire\ShowBoards::class)->name('dashboard');
 
-    Route::get('/boards', \App\Http\Controllers\BoardController::class)->name(
+    Route::get('/boards', \App\Livewire\ShowBoards::class)->name(
         'boards.index'
+    );
+
+    Route::get('/boards/{board}', \App\Livewire\ShowBoard::class)->name(
+        'boards.show'
     );
 });
