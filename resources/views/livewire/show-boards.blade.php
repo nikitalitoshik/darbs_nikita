@@ -5,9 +5,13 @@
 </x-slot>
 
 <div class="py-12">
+
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
             <div class="mt-10 space-y-16 border-t border-gray-200 pt-10">
+                <x-secondary-button type="button" class="mt-2" wire:click="addBoard">
+                    {{ __('Add Board') }}
+                </x-secondary-button>
                 @forelse($this->boards as $board)
                     <article class="flex max-w-xl flex-col items-start justify-between">
                         <div class="group relative">

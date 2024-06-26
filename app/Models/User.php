@@ -62,4 +62,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function boards(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Board::class);
+    }
 }

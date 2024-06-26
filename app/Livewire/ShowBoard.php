@@ -20,7 +20,7 @@ class ShowBoard extends Component
 
     public function addTask(Column $column)
     {
-        $column->tasks()->create(['title' => fake()->title,
+        $column->tasks()->create(['title' => fake()->sentence(),
         'pos'=>$column->tasks()->first() ? $column->tasks()->first()->value('pos') + 1 : 1]);
         $this->board->refresh();
     }

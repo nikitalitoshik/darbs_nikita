@@ -16,7 +16,7 @@ class ShowBoards extends Component
     #[Computed]
     public function getBoardsProperty(): Collection
     {
-        return Board::latest()->take($this->on_page)->get();
+        return Board::where('user_id',auth()->user()->id)->latest()->take($this->on_page)->get();
     }
 
     public function loadMore(): void
@@ -24,6 +24,10 @@ class ShowBoards extends Component
         $this->on_page += 5;
     }
 
+    public function addBoard(){
+
+        auth()->user()->boards()->create(['name'=>fake()->firstName]);
+    }
     public function render()
     {
         return view('livewire.show-boards');
