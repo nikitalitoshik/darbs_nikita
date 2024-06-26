@@ -16,7 +16,8 @@ In case of sqlite
 4. php artisan optimize
 5. npm i 
 6. npm run dev
-7. go to localhost
+7. php artisan serve
+8. go to localhost
 
 In case of postgresql
 3. `./vendor/bin/sail up`
